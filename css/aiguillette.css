@@ -16,12 +16,6 @@
 .datepicker.dropdown-menu {
     z-index: 9999 !important;
 }
-a.nav-link {
-color:rgba(206,212,218,0.6);
-}
-a.nav-link:hover {
-color:rgba(206,212,218,1);
-}
 
 .loader {
     background-color: #4CAF50;
@@ -38,12 +32,21 @@ color:rgba(206,212,218,1);
     z-index:200;
 }
 
-a.nav-link.active {
-    color:rgba(210,216,222,1);
+.colorMain {
+  color: rgb(34, 96, 107);
 }
-a.nav-link.active::after {
-  content:"|";
+
+.navbar-nav .nav-link.active {
+  color:rgb(34, 96, 107) !important;
+  font-weight: 700;
 }
+.navbar-nav .nav-link.active::before {
+  content:"[";
+}
+.navbar-nav .nav-link.active::after {
+  content:"]";
+}
+
 
 .datatable-font-small {
     font-size:10px;
@@ -159,3 +162,4 @@ table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
 .fc .fc-sw15-button {
   font-size:12px;
 }
+

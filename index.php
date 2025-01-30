@@ -20,34 +20,38 @@ include 'php/properties.php';
     <link href="fontawesome-free-6.7.2-web/css/all.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-<div class="d-flex w-100 h-100 bg-light" style="min-height:100vh;">
-    <div class="d-flex flex-column justify-content-center align-items-center col-sm-4 col-md-4 bg-light " >
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                    </li>
-                </ul>
+<div class="d-flex w-100 h-100 bg-light "  >
+    <div class="d-flex flex-column col-sm-4 col-md-4 bg-light sticky-top h-100" style="min-height:100vh;">
+        <div class="d-flex flex-column justify-content-center align-items-center col-sm-4 col-md-4 h-100 w-100" style="min-height:100vh;background: repeat url('img/pdp.png');">
+            <nav class="navbar navbar-expand-lg flex-grow-1">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link linkedL active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Marché</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Actus</a>
+                        </li>
+                    </ul>
+                    </div>
                 </div>
+            </nav>
+            <div class="d-flex justify-content-evenly w-100 m-2">
+                <div class="d-flex"><a href="#"><i class="fa-brands fa-instagram text-dark fs-4 mx-2"></i></a></div>
+                <div class="d-flex"><a href="#"><i class="fa-brands fa-facebook text-dark fs-4 mx-2"></i></a></div>
+                <div class="d-flex"><a href="#"><i class="fa-brands fa-linkedin-in text-dark fs-4 mx-2"></i></a></div>
             </div>
-        </nav>
+        </div>
     </div>
-    <div class="d-flex flex-column col-sm-8 col-md-8 bg-dark " >
+    <div class="d-flex flex-column col-sm-8 col-md-8 bg-dark overflow-scroll" >
         <div class="d-flex justify-content-center">
             <h4 class="m-4 text-light">L'aiguillette mon canard</h4>
         </div>
@@ -59,8 +63,8 @@ include 'php/properties.php';
                     <div class="card m-2 border border-0 rounded-0" style="">
                         <img src="img/1712595600.jpeg" class="card-img-top" style="object-fit: cover;max-height:400px;" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">A Force de se planter</h5>
-                            <p class="card-text justify-content-end">04-03-2025</p>
+                            <h5 class="card-title colorMain">A Force de se planter</h5>
+                            <p class="card-text justify-content-end colorMain">04-03-2025</p>
                         </div>
                     </div>
                 </a>
@@ -70,9 +74,9 @@ include 'php/properties.php';
                 <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
                     <div class="card m-2 border border-0 rounded-0" style="">
                         <img src="img/c.png" class="card-img-top" style="object-fit: cover;max-height:400px;" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Poulpy</h5>
-                            <p class="card-text justify-content-end">04-03-2025</p>
+                        <div class="card-body bg-dark bg-opacity-100">
+                            <h5 class="card-title colorMain">Poulpy</h5>
+                            <p class="card-text justify-content-end colorMain">04-03-2025</p>
                         </div>
                     </div>
                 </a>
@@ -83,8 +87,8 @@ include 'php/properties.php';
                     <div class="card m-2 border border-0 rounded-0" style="">
                         <img src="img/c.png" class="card-img-top" style="object-fit: cover;max-height:400px;" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Poulpy</h5>
-                            <p class="card-text justify-content-end">04-03-2025</p>
+                            <h5 class="card-title colorMain">Poulpy</h5>
+                            <p class="card-text justify-content-end colorMain">04-03-2025</p>
                         </div>
                     </div>
                 </a>
@@ -109,7 +113,12 @@ include 'php/properties.php';
 <!-- Empty.js -->
 <script type="text/javascript" src="js/template.js" ></script>
 <script type="text/javascript">
-
+//window.jQuery = $;
+console.log('ola');
+$(".navbar .nav-link").on("click", function(){
+   $(".navbar").find(".active").removeClass("active");
+   $(this).addClass("active");
+});
 
 
 </script>
