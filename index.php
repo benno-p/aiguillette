@@ -59,7 +59,7 @@ include 'php/properties.php';
 
             <!--img A -->
             <div class="col-sm-12 col-md-6 " style="">
-                <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+                <a href="exemple_page.php" class="link-offset-2 link-underline link-underline-opacity-0">
                     <div class="card m-2 border border-0 rounded-0" style="">
                         <img src="img/1712595600.jpeg" class="card-img-top" style="object-fit: cover;max-height:400px;" alt="...">
                         <div class="card-body">
@@ -71,7 +71,7 @@ include 'php/properties.php';
             </div>
             <!--img B -->
             <div class="col-sm-12 col-md-6 " style="">
-                <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+                <a href="exemple_page.php" class="link-offset-2 link-underline link-underline-opacity-0">
                     <div class="card m-2 border border-0 rounded-0" style="">
                         <img src="img/c.png" class="card-img-top" style="object-fit: cover;max-height:400px;" alt="...">
                         <div class="card-body bg-dark bg-opacity-100">
@@ -83,7 +83,7 @@ include 'php/properties.php';
             </div>
             <!--img C -->
             <div class="col-sm-12 col-md-6 " style="">
-                <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+                <a href="exemple_page.php" class="link-offset-2 link-underline link-underline-opacity-0">
                     <div class="card m-2 border border-0 rounded-0" style="">
                         <img src="img/c.png" class="card-img-top" style="object-fit: cover;max-height:400px;" alt="...">
                         <div class="card-body">
@@ -102,6 +102,48 @@ include 'php/properties.php';
 
 </div>
 
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      <button class="button share_facebook" data-url="https://superceval.fr">
+                            <i class="fa-brands fa-facebook text-dark fs-4 mx-2"></i>
+    Partager sur facebook
+</button>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 <!-- JQuery -->
 <script src="js/jquery-3.7.1.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
@@ -119,6 +161,30 @@ $(".navbar .nav-link").on("click", function(){
    $(".navbar").find(".active").removeClass("active");
    $(this).addClass("active");
 });
+
+
+
+
+
+var popupCenter = function(url, title, width, height){
+        var popupWidth = width || 640;
+        var popupHeight = height || 320;
+        var windowLeft = window.screenLeft || window.screenX;
+        var windowTop = window.screenTop || window.screenY;
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2 ;
+        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+        popup.focus();
+        return true;
+    };
+document.querySelector('.share_facebook').addEventListener('click', function(e){
+        e.preventDefault();
+        var url = this.getAttribute('data-url');
+        var shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+        popupCenter(shareUrl, "Partager sur facebook");
+    });
 
 
 </script>
